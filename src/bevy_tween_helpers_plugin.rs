@@ -11,11 +11,11 @@ pub struct TweeningLoggingFunction(pub Option<fn(String)>);
 
 impl Plugin for BevyTweenHelpersPlugin {
     fn build(&self, app: &mut App) {
-        app.insert_resource(TweeningLoggingFunction(self.logging_function.clone()))
+        app.insert_resource(TweeningLoggingFunction(self.logging_function))
             .add_plugins((
                 TweenRequestPlugin,
                 AnimationParentDestroyerPlugin,
-                BevyTweenHelpersSystemSetsPlugin
+                BevyTweenHelpersSystemSetsPlugin,
             ));
     }
 }

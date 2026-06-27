@@ -8,17 +8,15 @@ pub enum TweenHelpersSystemSet {
 
 pub struct BevyTweenHelpersSystemSetsPlugin;
 
-
 impl Plugin for BevyTweenHelpersSystemSetsPlugin {
     fn build(&self, app: &mut App) {
         app.configure_sets(
             Update,
             ((
-                 TweenHelpersSystemSet::PreTargetRemoval,
-                 TweenHelpersSystemSet::TargetRemoval,
-             )
-                 .chain(),),
+                TweenHelpersSystemSet::PreTargetRemoval,
+                TweenHelpersSystemSet::TargetRemoval,
+            )
+                .chain(),),
         );
     }
 }
-
